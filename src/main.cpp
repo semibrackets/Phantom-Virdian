@@ -2,6 +2,8 @@
 
 int main()
 {
+    std::mt19937 mt(time(nullptr));
+
     char io;
 
     initscr();
@@ -13,8 +15,8 @@ int main()
 
     if (!has_colors())
     {
-        printw("[ERR]: Your terminal doesn't have colors!\n");
-        printw("[INPUT]: Would you like to continue in colorless mode (y / n): ");
+        printw("[ERROR]: Your terminal doesn't have colors!\n");
+        printw("[INFO]: Would you like to continue in colorless mode (y / n): ");
         char io = getch();
         switch (io)
         {
@@ -34,20 +36,23 @@ int main()
     box(log, 0, 0);
     box(stats, 0, 0);
     box(inventory, 0, 0);
+    wrefresh(inventory);
+    wrefresh(stats);
+    wrefresh(log);
     wrefresh(header);
     wrefresh(main);
-    wrefresh(log);
-    wrefresh(stats);
-    wrefresh(inventory);
+
+    generate();
 
     while (true)
     {
+        render(main);
         io = getch(); if (io == ' ') break;
+        wrefresh(inventory);
+        wrefresh(stats);
+        wrefresh(log);
         wrefresh(header);
         wrefresh(main);
-        wrefresh(log);
-        wrefresh(stats);
-        wrefresh(inventory);
     }
 
     endwin();

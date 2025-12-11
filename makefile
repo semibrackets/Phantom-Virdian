@@ -1,7 +1,7 @@
 all: main
 
 main: src/main.cpp
-	rm -f main && g++ src/main.cpp -o main -lncurses -I./include && clear && ./main
+	g++ src/main.cpp src/include/*.cpp -o main -lncurses -Isrc/include
 
 clean:
 	rm -f main
