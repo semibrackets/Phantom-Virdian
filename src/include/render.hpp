@@ -2,7 +2,8 @@
 #define _RENDER_HPP
 
 #include "config.hpp"
+#include "entity.hpp"
 
-void render(WINDOW *main);
+void render(WINDOW *main, Entity, ... );
 
 #endif

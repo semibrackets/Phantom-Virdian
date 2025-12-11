@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <fstream>
-#include <cstdio>
+#include <cstdarg>
+#include <ctime>
 #include <vector>
 #include <random>
-#include <ctime>
 #include <ncurses.h>
 
 #include "render.hpp"
 #include "generate.hpp"
+#include "entity.hpp"
 
 #define MAXIMUM_SIZE_X 100
 #define MAXIMUM_SIZE_Y (MAXIMUM_SIZE_X / 2)
