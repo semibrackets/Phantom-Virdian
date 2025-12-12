@@ -4,7 +4,7 @@ int main()
 {
     std::mt19937 mt(time(nullptr));
 
-    Entity player(1, 1, 100, 10, '@');
+    Player p(1, 1, 100, 10, '@');
 
     char io;
 
@@ -48,8 +48,8 @@ int main()
 
     while (true)
     {
-        render(main, player);
-        io = getch(); if (io == ' ') break;
+        render(main, p);
+        p.getInput();
         wrefresh(inventory);
         wrefresh(stats);
         wrefresh(log);

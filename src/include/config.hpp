@@ -7,11 +7,8 @@
 #include <ctime>
 #include <vector>
 #include <random>
+#include <thread>
 #include <ncurses.h>
-
-#include "render.hpp"
-#include "generate.hpp"
-#include "entity.hpp"
 
 #define MAXIMUM_SIZE_X 100
 #define MAXIMUM_SIZE_Y (MAXIMUM_SIZE_X / 2)
@@ -32,5 +29,10 @@
 #define WINDOW_INVENOTRY_SIZE_Y WINDOW_LOG_SIZE_Y
 
 extern std::vector<std::vector<char>> world;
+
+#include "render.hpp"
+#include "generate.hpp"
+#include "entity.hpp"
+#include "player.hpp"
 
 #endif
